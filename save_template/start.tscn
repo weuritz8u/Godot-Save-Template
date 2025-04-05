@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckfdo7pq6c8s6"]
+
+[ext_resource type="Script" uid="uid://bul3p8qs0kep2" path="res://save_template/save.gd" id="1_ksope"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ksope")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 29.0
+offset_top = 153.0
+offset_right = 298.0
+offset_bottom = 613.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 20
+
+[node name="Load" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Load"
+
+[node name="Folder" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Open Folder"
+
+[node name="Save" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Save"
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 737.0
+offset_top = 115.0
+offset_right = 1079.0
+offset_bottom = 367.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Saved Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="for test" type="Container" parent="."]
+offset_left = 897.0
+offset_top = 399.0
+offset_right = 1047.0
+offset_bottom = 553.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="for test"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="for test/MarginContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="-" type="Button" parent="for test/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "-"
+
+[node name="+" type="Button" parent="for test/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Folder" to="." method="_on_folder_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="for test/MarginContainer2/VBoxContainer/-" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="for test/MarginContainer2/VBoxContainer/+" to="." method="_on_add_pressed"]
